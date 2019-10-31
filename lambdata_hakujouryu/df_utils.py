@@ -6,14 +6,6 @@ import pandas as pd
 import numpy as np
 
 
-TEST_DF = pd.DataFrame(
-    {'one': [1, 1, 1, 1], 'two': [2, 2, 2, 2],
-     'dates': ['09/09/1988', '04/02/1992', '01/10/2009', '04/20/1920']})
-
-
-TEST_LIST = [9, 9, 9, 9]
-
-
 class DateFunctions:
     """ Contains useful functions for manipulating Dates """
     def __init__(self):
