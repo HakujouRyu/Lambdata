@@ -20,12 +20,10 @@ class DateFunctions:
         pass
 
     def split_dates(self, df, column):
-        """ Converts ['created_at', 'dealdine', 'launched_at'] into pandas.dt,
-            and creates columns for month day and year.
-            Also creates 'days_to_launch' and 'campaign_length' columns """
+        """ Converts dates into DatTime then into columns """
         df[column] = pd.to_datetime(df[column])
 
-#        Break time up into columns Month day etc
+#        Break time up into columns: Month day etc
         df[f'{column}_month'] = df[column].dt.month
         df[f'{column}_dow'] = df[column].dt.weekday
         df[f'{column}_year'] = df[column].dt.year
@@ -37,7 +35,7 @@ class DateFunctions:
         return df
 
 
-def list_to_col(ls, df, list_name):
+def list_to_col(ls, df, list_name='old_list'):
     """ Converts ls (list) to a Series then joins
          to df as column 'list_name' """
 
